@@ -1,6 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio-Portfolio</title>
+    <style>
+        /* RESET & BASE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-"<h1>Mon Portfolio- Etudiant en b1</h1><p>Nom: [TON NOM] - Filière: [TA FILIERE]</p>" 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
 
-"<h1>Mon Portfolio</h1><p>Nom: [TON NOM] - Filière: [TA FILIERE]</p>" 
-"<h2>Compétences</h2><ul><li>HTML/CSS</li><li>Git</li><li>Python</li></ul>" 
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 40px 50px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
 
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* EN-TÊTE */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            color: #2d3748;
+            letter-spacing: -0.5px;
+        }
+
+        .header h1 span {
+            color: #667eea;
+        }
+
+        .header .badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 8px;
+            font-weight: 600;
+        }
+
+        /* INFOS ÉTUDIANT */
+        .student-info {
+            background: #f7fafc;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 25px;
+            text-align: center;
+            border-left: 5px solid #764ba2;
+        }
+
+        .student-info p {
+            font-size: 1.1rem;
+            color: #4a5568;
+            font-weight: 500;
+        }
+
+        .student-info .emoji {
+            font-size: 1.5rem;
+        }
+
+        /* COMPÉTENCES */
+        .competences {
+            margin-top: 10px;
+        }
+
+        .competences h2 {
+            font-size: 1.3rem;
+            color: #2d3748;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .competences h2::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(to right, #667eea, transparent);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+        }
+
+        .skill-item {
+            background: linear-gradient(135deg, #667eea15, #764ba215);
+            border: 1px solid #667eea30;
+            border-radius: 12px;
+            padding: 14px 10px;
+            text-align: center;
+            font-weight: 600;
+            color: #2d3748;
+            transition: all 0.3s ease;
+            cursor: default;
+            font-size: 0.95rem;
+        }
+
+        .skill-item:hover {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        /* PIED DE PAGE */
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #a0aec0;
+            border-top: 2px solid #edf2f7;
+            padding-top: 18px;
+        }
+
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 500px) {
+            .card {
+                padding: 25px 20px;
+            }
+
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <!-- EN-TÊTE -->
+        <div class="header">
+            <h1>👨‍🎓 Mon <span>Portfolio</span></h1>
+            <span class="badge">📚 Étudiant en B1</span>
+        </div>
+
+        <!-- INFOS ÉTUDIANT -->
+        <div class="student-info">
+            <p>
+                <span class="emoji">👤</span> <strong>Danielle Domche</strong> &nbsp;|&nbsp;
+                <span class="emoji">🎓</span> <strong>Informatique & IA</strong>
+            </p>
+        </div>
+
+        <!-- COMPÉTENCES -->
+        <div class="competences">
+            <h2>🛠️ Compétences</h2>
+            <div class="skills-grid">
+                <div class="skill-item">🌐 HTML / CSS</div>
+                <div class="skill-item">🐍 Python</div>
+                <div class="skill-item">📦 Git & GitHub</div>
+                <div class="skill-item">🤖 IA & ML</div>
+                <div class="skill-item">⚛️ JavaScript</div>
+                <div class="skill-item">🗄️ SQL</div>
+            </div>
+        </div>
+
+        <!-- PIED -->
+        <div class="footer">
+            💻 Projet Git — <a href="#">Bio-Portfolio</a> &bull; 2026
+        </div>
+    </div>
+</body>
+</html>
